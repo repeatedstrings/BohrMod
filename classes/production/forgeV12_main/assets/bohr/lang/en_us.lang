@@ -1,5 +1,6 @@
 tile.loc_bohr_block.name=Bohr Stone
-item.bohr_ore.name=Bohr Ore
+item.lang_bohr_ore.name=Bohr Ore
+
 item.bohr_axe.name=Bohr Axe!
 item.bohr_shovel.name=Bohr Shovel!
 item.bohr_hoe.name=Bohr Hoe!

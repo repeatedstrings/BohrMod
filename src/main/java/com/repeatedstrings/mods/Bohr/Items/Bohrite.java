@@ -41,7 +41,7 @@
 //
 //        @Override
 //        public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-//            return BohrishItemHandler.bohrOre;
+//            return BohrItemHandler.bohrOre;
 //    //        return super.getItemDropped(state, rand, fortune);
 //        }
 //

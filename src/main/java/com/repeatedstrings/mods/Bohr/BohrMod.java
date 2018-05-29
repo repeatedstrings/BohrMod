@@ -2,12 +2,12 @@ package com.repeatedstrings.mods.Bohr;
 
 import com.repeatedstrings.mods.Bohr.Config.Config;
 import com.repeatedstrings.mods.Bohr.Handlers.BohrBlockHandler;
+import com.repeatedstrings.mods.Bohr.Handlers.BohrItemHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
  * Created by james on 5/6/17.
@@ -24,10 +24,11 @@ public class BohrMod {
     // (basically, we are putting them in the library that can be used)
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-//        BohrishItemHandler.init();
-//        BohrishItemHandler.register();
+//        BohrItemHandler.init();
+//        BohrItemHandler.register();
 
         BohrBlockHandler.preinit();
+        BohrItemHandler.preInit();
 
 //        GameRegistry.registerWorldGenerator(new BohrBlockinatorHandler(),0);
 //
@@ -42,16 +43,19 @@ public class BohrMod {
     @EventHandler
     public void init(FMLInitializationEvent event) {
         {
-//            BohrishItemHandler.registerRenders();
+//            BohrItemHandler.registerRenders();
 
             BohrBlockHandler.init();
+            BohrItemHandler.init();
 //            BohrishArmorHandler.registerRenders();
         }
     }
 
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
+
         BohrBlockHandler.postInit();
+        BohrItemHandler.postInit();
     }
 
 }

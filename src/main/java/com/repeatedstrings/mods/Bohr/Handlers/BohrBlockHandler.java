@@ -15,9 +15,9 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 /**
  * Created by james on 5/8/17.
  */
-public class BohrBlockHandler implements BohrHandlerInterface {
-    public static Block bohrBlock;
-    public static ItemBlock iBohrBlock;
+public class BohrBlockHandler {
+    private static Block bohrBlock;
+    private static ItemBlock iBohrBlock;
 
     public static void preinit() {
         bohrBlock = new BohrBlock(Material.ROCK, "loc_bohr_block","bohr_block", CreativeTabs.BUILDING_BLOCKS, 1F, 2F, 0, "pickaxe");
@@ -27,9 +27,12 @@ public class BohrBlockHandler implements BohrHandlerInterface {
         iBohrBlock.setRegistryName("ibohr_block");
         ForgeRegistries.ITEMS.register(iBohrBlock);
 
-        ModelResourceLocation itemModelResourceLocation = new ModelResourceLocation("bohr:bohr_block", "inventory");
+        ModelResourceLocation imrl =
+                new ModelResourceLocation("bohr:bohr_block", "inventory");
         final int DEFAULT_ITEM_SUBTYPE = 0;
-        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(BohrBlockHandler.bohrBlock), DEFAULT_ITEM_SUBTYPE, itemModelResourceLocation);
+        ModelLoader.setCustomModelResourceLocation(
+                Item.getItemFromBlock(BohrBlockHandler.bohrBlock), DEFAULT_ITEM_SUBTYPE,
+                imrl);
 
     }
 
